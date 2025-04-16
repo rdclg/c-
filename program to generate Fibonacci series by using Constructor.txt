@@ -1,0 +1,43 @@
+Write a c++ program to generate Fibonacci series by using Constructor to initialize the Data Member.
+
+Code:
+#include<iostream.h>
+#include<conio.h>
+
+class Fibonacci {
+    int a, b;
+public:
+    Fibonacci() {
+        a = 0;
+        b = 1;
+    }
+
+    void generate(int n) {
+        if(n > 0) {
+            cout << a << " ";
+            int temp = a;
+            a = b;
+            b = temp + b;
+            generate(n - 1);
+        }
+    }
+};
+
+void main() {
+    clrscr();
+    Fibonacci f;
+    int n;
+    cout << "Enter the number of Fibonacci terms: ";
+    cin >> n;
+    f.generate(n);
+    getch();
+}
+
+
+
+
+
+Output:
+Enter the number of Fibonacci terms: 5
+
+0 1 1 2 3
