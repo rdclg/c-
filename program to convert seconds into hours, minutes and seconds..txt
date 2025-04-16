@@ -1,0 +1,18 @@
+Write a C++ program to convert seconds into hours, minutes and seconds.
+Code:
+#include <iostream.h> 
+int main() {
+    int total_seconds, hours, minutes, seconds;
+    cout << "Enter the number of seconds: ";
+    cin >> total_seconds;
+    hours = total_seconds / 3600;  
+    total_seconds %= 3600;         
+    minutes = total_seconds / 60;  
+    seconds = total_seconds % 60; 
+    cout << "Equivalent time: " << hours << " hours, " << minutes << " minutes, " << seconds << " seconds." << endl;
+    return 0;
+}	
+output-
+
+Enter the number of seconds: 400
+Equivalent time: 0 hours, 6 minutes, 40 seconds.
