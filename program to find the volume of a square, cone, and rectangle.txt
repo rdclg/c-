@@ -1,0 +1,61 @@
+Write a C++ program to find the volume of a square, cone, and rectangle
+Code:	
+#include <iostream.h>  
+#define PI 3.14159   
+void calculateCubeVolume(double side) {
+    double volume = side * side * side;
+    cout << "Volume of the cube (square in 3D): " << volume << endl;
+}
+void calculateConeVolume(double radius, double height) {
+    double volume = (1.0 / 3) * PI * radius * radius * height;
+    cout << "Volume of the cone: " << volume << endl;
+}
+void calculateRectangularPrismVolume(double length, double width, double height) {
+    double volume = length * width * height;
+    cout << "Volume of the rectangular prism: " << volume << endl;
+}
+
+int main() {
+    int choice;
+    double side, radius, height, length, width;
+    cout << "Volume Calculator\n";
+    cout << "1. Volume of a Cube (Square in 3D)\n";
+    cout << "2. Volume of a Cone\n";
+    cout << "3. Volume of a Rectangular Prism\n";
+    cout << "Enter your choice (1-3): ";
+    cin >> choice;
+    switch (choice) {
+	case 1:
+	    cout << "Enter the side length of the cube: ";
+	    cin >> side;
+	    calculateCubeVolume(side);
+	    break;
+	case 2:
+	    cout << "Enter the radius and height of the cone: ";
+	    cin >> radius >> height;
+	    calculateConeVolume(radius, height);
+	    break;
+	case 3:
+	    cout << "Enter the length, width, and height of the rectangular prism: ";
+	    cin >> length >> width >> height;
+	    calculateRectangularPrismVolume(length, width, height);
+	    break;
+	default:
+	    cout << "Invalid choice! Please select a valid option (1-3).\n";
+	    break;
+    }
+    return 0;
+}
+
+output-
+Volume Calculator
+
+1. Volume of a Cube (Square in 3D)
+2. Volume of a Cone
+3. Volume of a Rectangular Prism
+
+Enter your choice (1-3): 2
+
+Enter the radius and height of the cone: 11 12
+
+Volume of the cone: 1520.52956
