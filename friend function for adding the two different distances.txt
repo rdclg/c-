@@ -1,0 +1,38 @@
+Write a friend function for adding the two different distances and display its sum, using two class.
+Code:
+#include<iostream.h>
+#include<conio.h>
+
+class Distance2;  
+
+class Distance1 {
+    int feet1, inches1;
+public:
+    Distance1(int f, int i) : feet1(f), inches1(i) {}  
+    friend void addDistances(Distance1, Distance2);  
+};
+
+class Distance2 {
+    int feet2, inches2;
+public:
+    Distance2(int f, int i) : feet2(f), inches2(i) {} 
+    friend void addDistances(Distance1, Distance2); 
+};
+
+
+void addDistances(Distance1 d1, Distance2 d2) {
+    int totalFeet = d1.feet1 + d2.feet2 + (d1.inches1 + d2.inches2) / 12;
+    int totalInches = (d1.inches1 + d2.inches2) % 12;
+    cout << "Sum of distances: " << totalFeet << " feet " << totalInches << " inches" << endl;
+}
+
+void main() {
+    clrscr();
+    Distance1 d1(5, 10);  
+    Distance2 d2(6, 8);   
+
+    addDistances(d1, d2); 
+    getch();
+}
+Output:
+sum of distances-12 feet 6 inches
