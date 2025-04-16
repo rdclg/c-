@@ -1,0 +1,59 @@
+ Write a C++ program to create a simple calculator.
+Code:
+#include <iostream.h>  
+void add(double num1, double num2);
+void subtract(double num1, double num2);
+void multiply(double num1, double num2);
+void divide(double num1, double num2);
+	
+int main() {
+    double num1, num2;
+    char operation;
+    cout << "Simple Calculator" << endl;
+    cout << "Enter the first number: ";
+    cin >> num1;
+    cout << "Enter the second number: ";
+    cin >> num2;
+    cout << "Choose the operation (+, -, *, /): ";
+    cin >> operation;
+    switch (operation) {
+	case '+':
+	    add(num1, num2);
+	    break;
+	case '-':
+	    subtract(num1, num2);
+	    break;
+	case '*':
+	    multiply(num1, num2);
+	    break;
+	case '/':
+	    if (num2 != 0) {
+		divide(num1, num2);
+	    } else {
+		cout << "Error! Division by zero is not allowed." << endl;
+	    }
+	    break;
+	default:
+	    cout << "Invalid operation!" << endl;
+	    break;
+    }
+    return 0;
+}
+void add(double num1, double num2) {
+    cout << "Result: " << num1 + num2 << endl;
+}
+void subtract(double num1, double num2) {
+    cout << "Result: " << num1 - num2 << endl;
+}
+void multiply(double num1, double num2) {
+    cout << "Result: " << num1 * num2 << endl;
+}
+void divide(double num1, double num2) {
+    cout << "Result: " << num1 / num2 << endl;
+}
+ output-
+Simple Calculator
+Enter the first number: 2
+Enter the second number: 4
+Choose the operation (+, -, *, /): +
+Result: 6
