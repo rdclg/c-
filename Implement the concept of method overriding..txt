@@ -1,0 +1,36 @@
+ Implement the concept of method overriding.
+Code:
+#include<iostream.h>
+#include<conio.h>
+class Animal {
+public:
+    virtual void sound() {
+        cout << "Animal makes a sound" << endl;
+    }
+};
+class Dog : public Animal {
+public:
+    void sound() {
+        cout << "Dog barks" << endl;
+    }
+};
+class Cat : public Animal {
+public:
+    void sound() {
+        cout << "Cat meows" << endl;
+    }
+};
+void main() {
+    clrscr();
+    Animal* animal;
+    Dog dog;
+    Cat cat;
+    animal = &dog;
+    animal->sound();
+    animal = &cat;
+    animal->sound();
+    getch();
+}
+Output:
+dog barks 
+cat meows
