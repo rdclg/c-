@@ -1,0 +1,68 @@
+:- Write a C++ Program that illustrate multiple inheritance.
+Code:-
+#include<iostream.h>
+#include<conio.h>
+class A
+{
+protected:
+    int a;
+    A()
+    {
+        cout << "Enter value of A: ";
+        cin >> a;
+    }
+    void showA()
+    {
+        cout << "A = " << a << endl;
+    }
+};
+class B
+{
+protected:
+    int b;
+    B()
+    {
+        cout << "Enter value of B: ";
+        cin >> b;
+    }
+    void showB()
+    {
+        cout << "B = " << b << endl;
+    }
+};
+class C : public A, public B
+{
+    int c;
+public:
+    C() : A(), B()  
+    {
+        cout << "Enter value of C: ";
+        cin >> c;
+    }
+    void showC()
+    {
+        showA();
+        showB();
+        cout << "C = " << c << endl;
+    }
+    void sum()
+    {
+        cout << "Sum is " << a + b + c << endl;
+    }
+};
+void main()
+{
+    clrscr();
+    C obj;
+    obj.showC();
+    obj.sum();
+    getch();   
+}
+Output:-
+enter value of A=1
+enter value of B=2
+enter value of C=3
+A=1
+B=2
+C=3
+SUM=6
