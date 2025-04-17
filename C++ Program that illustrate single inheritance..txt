@@ -1,0 +1,53 @@
+:- Write a C++ Program that illustrate single inheritance.
+Code:
+#include<iostream.h>
+#include<conio.h>
+class A
+{
+protected:
+    int a;
+    void getA()
+    {
+        cout << "Enter value of A: ";
+        cin >> a;
+    }
+    void showA()
+    {
+        cout << "A = " << a << endl;
+    }
+};
+class B : public A
+{
+    int b;
+public:
+    void getB()
+    {
+        getA();
+        cout << "Enter value of B: ";
+        cin >> b;
+    }
+    void showB()
+    {
+        showA();
+        cout << "B = " << b << endl;
+    }
+    void sum()
+    {
+        cout << "Sum is " << a + b << endl;
+    }
+};
+void main()
+{
+    clrscr();
+    B obj;
+    obj.getB();
+    obj.showB();
+    obj.sum();
+    getch();
+}
+Output:
+enter value of A=1
+enter value of B=2
+A=1
+B=2
+SUM=3
