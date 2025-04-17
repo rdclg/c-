@@ -1,0 +1,40 @@
+Show the use of virtual function.
+Code:-
+ #include<iostream.h>
+#include<conio.h>
+class Vehicle {
+public:
+    virtual void start() {
+        cout << "Vehicle is starting" << endl;
+    }
+};
+class Car : public Vehicle {
+public:
+    void start() {
+        cout << "Car is starting" << endl;
+    }
+};
+class Bike : public Vehicle {
+public:
+    void start() {
+        cout << "Bike is starting" << endl;
+    }
+};
+void main() {
+    clrscr();
+    Vehicle* vehiclePtr;
+    Vehicle vehicleObj;
+    Car carObj;
+    Bike bikeObj;
+    vehiclePtr = &vehicleObj;
+    vehiclePtr->start();
+    vehiclePtr = &carObj;
+    vehiclePtr->start();
+    vehiclePtr = &bikeObj;
+    vehiclePtr->start();
+    getch();
+}
+Output:-
+vehicle is starting
+car is starting
+bike is starting
