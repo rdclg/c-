@@ -1,0 +1,22 @@
+Show the implementation of exception handling.
+Code :-
+#include<iostream>
+using namespace std;
+
+int main() {of exception handling.
+
+    try {
+        int a = 10, b = 0;
+        if (b == 0)
+           throw "Division by zero error";
+        cout << a / b;
+    }
+    catch (const char* msg) {
+        cout << msg;
+    }
+    return 0;
+}
+
+Output:-
+division by zero error
+===code execution successfull===
