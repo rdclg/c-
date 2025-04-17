@@ -1,0 +1,36 @@
+Overload the + for concatenating the two strings . for e.g “Py”+”Thon”=PyThon .
+Code:- 
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+class String {
+private:
+    char str[100];
+public:
+    String(const char* s = "") {
+        strcpy(str, s);
+    }
+    void display() {
+        cout << str << endl;
+    }
+    String operator+(String s) {
+        String temp;
+        strcat(temp.str, str);
+        strcat(temp.str, s.str);
+        return temp;
+    }
+};
+void main() {
+    clrscr();
+    String str1("Py");
+    String str2("thon");
+    str1.display();
+    str2.display();
+    String str3 = str1 + str2;
+    str3.display();
+    getch();
+}
+Output :-
+py
+thon
+python
