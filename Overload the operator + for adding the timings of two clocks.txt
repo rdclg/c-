@@ -1,0 +1,42 @@
+Overload the operator + for adding the timings of two clocks ,and also pass objects as an argument.
+Code :-
+#include<iostream.h>
+#include<conio.h>
+class Clock {
+private:
+    int hours, minutes, seconds;
+public:
+    Clock(int h = 0, int m = 0, int s = 0) {
+        hours = h;
+        minutes = m;
+        seconds = s;
+    }
+    void display() {
+        cout << "Time: " << hours << ":" << minutes << ":" << seconds << endl;
+    }
+    Clock operator+(Clock c) {
+        int totalSeconds = (hours * 3600 + minutes * 60 + seconds) + 
+                           (c.hours * 3600 + c.minutes * 60 + c.seconds);
+        int h = totalSeconds / 3600;
+        totalSeconds %= 3600;
+        int m = totalSeconds / 60;
+        int s = totalSeconds % 60;
+        return Clock(h, m, s);
+    }
+};
+void main() {
+    clrscr();
+    Clock clock1(2, 45, 30);
+    Clock clock2(3, 15, 45);
+    clock1.display();
+    clock2.display();
+    Clock clock3 = clock1 + clock2;
+    clock3.display();
+    getch();
+}
+Output :-
+Time: 2:45:30
+
+Time: 3:15:45
+
+Time: 6:1:15
